@@ -54,8 +54,8 @@ export default () => {
     <ThemeProvider theme={appTheme}>
       <>
         <Head>
-          <title>App | A react next landing page</title>
-          <meta name="Description" content="React next landing page" />
+          <title>Team Health Check</title>
+          <meta name="Description" content="Team Health Check" />
           <meta name="theme-color" content="#ec5555" />
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"

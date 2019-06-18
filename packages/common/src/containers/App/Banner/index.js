@@ -22,7 +22,7 @@ import BannerWrapper, {
   EmailInputWrapper,
 } from './banner.style';
 
-import AppScreenshot from '../../../assets/image/app/mobile.png';
+import AppScreenshot from '../../../assets/image/app/silverIphoneMockup-2x.png';
 
 const DomainSection = ({
   SectionWrapper,
@@ -134,7 +134,7 @@ DomainSection.defaultProps = {
   // 	width: [1, '42%'],
   // },
   imageArea: {
-    width: ['0%', '0%', '43%', '35%', '50%'],
+    width: ['0%', '0%', '43%', '35%', '40%'],
     ml: 'auto',
   },
   title: {
