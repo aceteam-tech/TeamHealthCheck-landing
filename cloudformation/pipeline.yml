@@ -8,10 +8,10 @@ Parameters:
     Default: 'THC-landing'
     Description: 'A name for pipeline'
     Type: 'String'
-#  WebhookName:
-#    Default: 'HC-backend-webhook'
-#    Description: 'Github webhook for new changes'
-#    Type: 'String'
+  WebhookName:
+    Default: 'THC-landing-pipeline-webhook'
+    Description: 'Github webhook for new changes'
+    Type: 'String'
   OAuthToken:
     Type: 'AWS::SSM::Parameter::Value<String>'
     Default: 'github-hc-functions-pipeline-oauth'
@@ -125,20 +125,20 @@ Resources:
 #              Configuration:
 #                ProjectName: 'BuildProduction'
 
-#  Webhook:
-#    Type: 'AWS::CodePipeline::Webhook'
-#    Properties:
-#      Name: !Ref WebhookName
-#      Authentication: 'GITHUB_HMAC'
-#      AuthenticationConfiguration:
-#        SecretToken: !Ref GithubSecret
-#      Filters:
-#        - JsonPath: "$.ref"
-#          MatchEquals: 'refs/heads/master'
-#      TargetPipeline: !Ref PipelineName
-#      TargetAction: fetch-github
-#      TargetPipelineVersion: !GetAtt Pipeline.Version
-#      RegisterWithThirdParty: 'true'
+  Webhook:
+    Type: 'AWS::CodePipeline::Webhook'
+    Properties:
+      Name: !Ref WebhookName
+      Authentication: 'GITHUB_HMAC'
+      AuthenticationConfiguration:
+        SecretToken: !Ref GithubSecret
+      Filters:
+        - JsonPath: "$.ref"
+          MatchEquals: 'refs/heads/master'
+      TargetPipeline: !Ref PipelineName
+      TargetAction: fetch-github
+      TargetPipelineVersion: !GetAtt Pipeline.Version
+      RegisterWithThirdParty: 'true'
 
   PipelineRole:
     Type: 'AWS::IAM::Role'
@@ -156,7 +156,7 @@ Resources:
       ManagedPolicyArns:
         - 'arn:aws:iam::aws:policy/AdministratorAccess'
 
-#Outputs:
-#  WebhookUrl:
-#    Description: 'The url for the github webhook'
-#    Value: !GetAtt Webhook.Url
+Outputs:
+  WebhookUrl:
+    Description: 'The url for the github webhook'
+    Value: !GetAtt Webhook.Url
