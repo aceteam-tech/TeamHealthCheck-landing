@@ -11,6 +11,7 @@ import {
 import { ResetCSS } from 'common/src/assets/css/style';
 import Navbar from 'common/src/containers/App/Navbar';
 import DomainSection from 'common/src/containers/App/Banner';
+import AboutSection from 'common/src/containers/App/About';
 import FeatureSection from 'common/src/containers/App/FeatureSection';
 import ControllSection from 'common/src/containers/App/Control';
 import TestimonialSection from 'common/src/containers/App/Testimonial';
@@ -73,14 +74,15 @@ export default () => {
             </DrawerProvider>
           </Sticky>
           <DomainSection />
-          <FeatureSection />
-          <ControllSection />
+          {/*<AboutSection />*/}
           <ConditionWrapper id="keyfeature">
             {size.innerWidth > 1100 ? <FeatureSlider /> : <FeatureSliderTwo />}
           </ConditionWrapper>
-          <PartnerHistory />
-          <PaymentSection />
-          <TestimonialSection />
+          {/*<FeatureSection />*/}
+          {/*<ControllSection />*/}
+          {/*<PartnerHistory />*/}
+          {/*<PaymentSection />*/}
+          {/*<TestimonialSection />*/}
           <Footer />
         </AppWrapper>
       </>

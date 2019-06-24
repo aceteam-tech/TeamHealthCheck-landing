@@ -27,22 +27,22 @@ const Footer = ({
             <Container>
                 <Box className="row" {...row}>
                     {/* End of footer logo column */}
-                    <Box {...colOne}>
-                        {data.menuWidget.map(widget => (
-                            <Box className="col" {...col} key={widget.id}>
-                                <Heading content={widget.title} {...titleStyle} />
-                                <List>
-                                    {widget.menuItems.map(item => (
-                                        <ListItem key={`list__item-${item.id}`}>
-                                            <Link href={item.url}>
-                                                <a className="ListItem">{item.text}</a>
-                                            </Link>
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            </Box>
-                        ))}
-                    </Box>
+                    {/*<Box {...colOne}>*/}
+                        {/*{data.menuWidget.map(widget => (*/}
+                            {/*<Box className="col" {...col} key={widget.id}>*/}
+                                {/*<Heading content={widget.title} {...titleStyle} />*/}
+                                {/*<List>*/}
+                                    {/*{widget.menuItems.map(item => (*/}
+                                        {/*<ListItem key={`list__item-${item.id}`}>*/}
+                                            {/*<Link href={item.url}>*/}
+                                                {/*<a className="ListItem">{item.text}</a>*/}
+                                            {/*</Link>*/}
+                                        {/*</ListItem>*/}
+                                    {/*))}*/}
+                                {/*</List>*/}
+                            {/*</Box>*/}
+                        {/*))}*/}
+                    {/*</Box>*/}
                     <Box {...colTwo} className="copyrightClass">
                         <Logo
                             href="#"
@@ -96,8 +96,8 @@ Footer.defaultProps = {
         pl: ['15px', 0],
         pt: ['35px', '55px'],
         pr: ['15px', '15px', 0],
-        borderTop: '1px solid',
-        borderColor: 'rgba(0,0,0,0.102)',
+        // borderTop: '1px solid',
+        // borderColor: 'rgba(0,0,0,0.102)',
         flexBox: true,
         flexWrap: 'wrap',
         width: ['100%']
