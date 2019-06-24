@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - cd packages/landing
+      - sudo npm i -g yarn
+      - echo Installing dependencies...
+      - yarn
+  build:
+    commands:
+      - echo Entered the build phase...
+      - yarn export
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  base-directory: packages/landing/out
+  files:
+    - '**/*'
